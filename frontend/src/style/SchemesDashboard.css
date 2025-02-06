@@ -1,0 +1,131 @@
+/* General Styles */
+.dashboard-container {
+  padding: 30px;
+  background-color: #f4f6f9;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin: 30px auto;
+  max-width: 1200px;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* Profile Button - Positioned at the top-right */
+.profile-button {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.profile-button:hover {
+  background-color: #218838;
+}
+
+.profile-button svg {
+  margin-right: 8px;
+}
+
+/* Search Bar Container */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.search-input {
+  padding: 12px;
+  font-size: 16px;
+  width: 60%;
+  max-width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+}
+
+.search-icon {
+  position: absolute;
+  right: 20px;
+  color: #007bff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Schemes List Layout */
+.schemes-list {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.scheme-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.scheme-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.scheme-title {
+  background-color: #f8f8f8;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: background-color 0.3s ease;
+}
+
+.scheme-title:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-input {
+    width: 80%;
+  }
+
+  .schemes-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+

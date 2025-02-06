@@ -1,0 +1,192 @@
+/* Landing Page Styles */
+.landing-page {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Navbar Styles */
+.landing-page .navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #003366;
+  color: white;
+  align-items: center;
+}
+
+.landing-page .navbar-logo h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.landing-page .navbar-login .login-btn {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.landing-page .navbar-login .login-btn:hover {
+  background-color: #45a049;
+}
+
+/* Hero Section Styles */
+.landing-page .hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff7a18, #af002d);
+  color: white;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.landing-page .hero-content h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.landing-page .hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+.landing-page .hero-content .picture img {
+  max-width: 150px;
+  border-radius: 10px;
+}
+
+/* Talk to Our Bot Section */
+.landing-page .talk-to-bot {
+  padding: 60px 40px;
+  background-color: #f4f4f4;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.landing-page .talk-to-bot h3 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.landing-page .talk-to-bot p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.landing-page .talk-btn {
+  padding: 12px 25px;
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.landing-page .talk-btn:hover {
+  background-color: #e67e00;
+}
+
+/* Features Section Styles */
+.landing-page .features {
+  padding: 60px 40px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.landing-page .features h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.landing-page .features-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.landing-page .feature-card {
+  background: #fff;
+  padding: 30px;
+  width: 30%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.landing-page .feature-card h3 {
+  font-size: 1.8rem;
+  color: #4caf50;
+  margin-bottom: 15px;
+}
+
+.landing-page .feature-card p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Call-to-Action Section Styles */
+.landing-page .cta-section {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.landing-page .cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.landing-page .cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.landing-page .explore-btn {
+  padding: 12px 25px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.landing-page .explore-btn:hover {
+  background-color: #45a049;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .landing-page .hero-content h2 {
+    font-size: 2.5rem;
+  }
+
+  .landing-page .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .landing-page .features-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .landing-page .feature-card {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+
+  .landing-page .talk-to-bot,
+  .landing-page .features,
+  .landing-page .cta-section {
+    padding: 40px 20px;
+  }
+}

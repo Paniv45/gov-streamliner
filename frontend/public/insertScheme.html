@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Scheme with Dynamic Fields</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+
+    .array-container {
+      margin-bottom: 10px;
+    }
+
+    .array-item {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    .array-item input {
+      flex: 1;
+    }
+
+    .array-item button {
+      background: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 5px 10px;
+    }
+
+    button.add-field {
+      margin-top: 10px;
+      padding: 5px 10px;
+    }
+
+    button[type="submit"] {
+      margin-top: 15px;
+      padding: 10px 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Add New Scheme</h2>
+  <form id="scheme-form">
+
+    <label>Tags:</label>
+    <button type="button" class="add-field" onclick="addField('tags-container', 'tags[]')">+ Add Tag</button>
+    <div id="tags-container" class="array-container">
+      <div class="array-item">
+        <input type="text" name="tags[]" placeholder="Tag">
+        <button type="button" onclick="removeField(this)">-</button>
+      </div>
+    </div>
+
+
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required>
+
+    <label for="desc">Description:</label>
+    <textarea id="desc" name="desc" rows="3" required></textarea>
+
+    <label for="benefits">Benefits:</label>
+    <textarea id="benefits" name="benefits" rows="3" required></textarea>
+
+
+    <label>Eligibility:</label>
+    <button type="button" class="add-field" onclick="addField('eleg-container', 'eligibility[]')">+ Eligibility</button>
+    <div id="eleg-container" class="array-container">
+      <div class="array-item">
+        <input type="text" name=eligibility[]" placeholder="Eligibility">
+        <button type="button" onclick="removeField(this)">-</button>
+      </div>
+    </div>
+
+
+    <label>Required Documents:</label>
+    <button type="button" class="add-field" onclick="addField('docs-container', 'docs_required[]')">+ Add
+      Document</button>
+    <div id="docs-container" class="array-container">
+      <div class="array-item">
+        <input type="text" name="docs_required[]" placeholder="Document">
+        <button type="button" onclick="removeField(this)">-</button>
+      </div>
+    </div>
+
+    <label>Application Process:</label>
+    <button type="button" class="add-field" onclick="addField('apps-container', 'application_process[]')">+ Add
+      Process</button>
+    <div id="apps-container" class="array-container">
+      <div class="array-item">
+        <input type="text" name="application_process[]" placeholder="Application Process">
+        <button type="button" onclick="removeField(this)">-</button>
+      </div>
+    </div>
+
+    <button id="btn-submit">Add Scheme</button>
+    <button id="btn-clear">Clear Scheme</button>
+
+    <!-- response display -->
+    <span id="response"></span>
+
+  </form>
+
+  <script>
+    // Function to add new input field dynamically
+    function addField(containerId, inputName) {
+      const container = document.getElementById(containerId);
+      const newField = document.createElement('div');
+      newField.className = 'array-item';
+      newField.innerHTML = `
+        <input type="text" name="${inputName}" placeholder="Enter value">
+        <button type="button" onclick="removeField(this)">-</button>
+      `;
+      container.appendChild(newField);
+    }
+
+    // Function to remove an input field
+    function removeField(button) {
+      button.parentElement.remove();
+    }
+
+    const URL = "http://localhost:5000/api/add-scheme";
+
+    const form = document.getElementById('scheme-form');
+    const btnSubmit = document.getElementById('btn-submit');
+    const btnClear = document.getElementById('btn-clear');
+
+    btnClear.addEventListener('click', (e) => {
+      e.preventDefault();
+      form.reset();
+    });
+
+    btnSubmit.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+
+      const data = {};
+      for (let [key, value] of formData.entries()) {
+        if (key.endsWith('[]')) {
+          key = key.slice(0, -2);
+          if (!data[key]) {
+            data[key] = [];
+          }
+          data[key].push(value);
+        } else {
+          data[key] = value;
+        }
+      }
+      console.log(data);
+
+      try {
+        const response = await fetch(URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        const responseData = await response.json();
+        console.log(responseData.message);
+        document.getElementById('response').textContent = responseData.message;
+        // form.reset();
+
+        if (response.ok) {
+          document.getElementById('response').style.color = 'green';
+        } else {
+          document.getElementById('response').style.color = 'red';
+        }
+      }
+      catch (error) {
+        console.error(error);
+        alert('Error adding scheme');
+      }
+
+    });
+
+
+  </script>
+</body>
+
+</html>

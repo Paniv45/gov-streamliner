@@ -1,0 +1,170 @@
+/* SchemeDetails.css */
+
+/* Container for the scheme details */
+.scheme-details-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(255, 255, 255, 0.6);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Title styling */
+.scheme-details-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Paragraph styling */
+.scheme-details-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 10px 0;
+}
+
+/* Application process list */
+.scheme-details-container .application-process ol {
+  margin-left: 20px;
+  color: #444;
+  font-size: 1rem;
+}
+
+/* Documents list */
+.scheme-details-container .documents ul {
+  list-style: none;
+  padding: 0;
+}
+
+.scheme-details-container .documents li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+
+.scheme-details-container .documents li span {
+  font-weight: 600;
+  color: #333;
+}
+
+/* File input */
+.scheme-details-container input[type="file"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-size: 0.9rem;
+}
+
+.scheme-details-container input[type="file"]:hover {
+  border-color: #777;
+}
+
+/* Generate PDF button */
+.scheme-details-container .generate-pdf-button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: linear-gradient(145deg, #4caf50, #45a049); /* Green gradient */
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2), -2px -2px 6px rgba(255, 255, 255, 0.6);
+}
+
+.scheme-details-container .generate-pdf-button:hover {
+  background: linear-gradient(145deg, #45a049, #4caf50); /* Darker green on hover */
+  transform: translateY(-2px);
+}
+
+/* Tags container */
+.scheme-details-container .tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Individual tag styling */
+.scheme-details-container .tag {
+  background-color: #4caf50; /* Green tag background */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Recommendations section */
+.scheme-details-container .recommendations {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), -4px -4px 12px rgba(255, 255, 255, 0.3);
+}
+
+/* Heading of recommendations */
+.scheme-details-container .recommendations h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 15px;
+  border-left: 4px solid #4caf50; /* Green left border */
+  padding-left: 10px;
+}
+
+/* List items in recommendations */
+.scheme-details-container .recommendations ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.scheme-details-container .recommendations li {
+  margin: 15px 0;
+  font-size: 1.2rem;
+}
+
+/* Recommendation buttons */
+.scheme-details-container .recommendations button {
+  display: inline-block;
+  font-size: 1rem;
+  color: #4caf50; /* Green text */
+  background-color: #f9f9f9;
+  border: 2px solid #4caf50; /* Green border */
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scheme-details-container .recommendations button:hover {
+  background-color: #4caf50; /* Green background */
+  color: white;
+  border-color: #45a049; /* Darker green */
+}
+
+.scheme-details-container .recommendations button:focus {
+  outline: none;
+}
+
+/* Recommendation paragraphs */
+.scheme-details-container .recommendations p {
+  color: #666;
+}

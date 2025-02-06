@@ -1,0 +1,95 @@
+/* Ensure the chatbot is positioned at the bottom-right of the screen */
+.chatbot-container {
+    position: fixed;
+    bottom: 80px; /* Position it slightly above the button */
+    right: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+  }
+  
+  /* Chatbot icon styling */
+  .chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+  }
+  
+  .chatbot-icon:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Chat window and form styling */
+  .chat-window {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    max-height: 100%;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .chat-form {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+  }
+  
+  .chat-form input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+  
+  .chat-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .chat-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Chat messages */
+  .user {
+    text-align: left;
+    margin: 5px 0;
+  }
+  
+  .bot {
+    text-align: right;
+    margin: 5px 0;
+  }
+  
+  .bot button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .bot button:hover {
+    background-color: #218838;
+  }
+  
+  

@@ -1,0 +1,17 @@
+/* Footer Styles (Scoped) */
+.footer-container {
+    display: flex;
+    flex-direction: column;
+   
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #003366;
+    color: white;
+    position: relative; /* or fixed if you want it sticky */
+    bottom: 0;
+    width: auto;
+  }
+  
