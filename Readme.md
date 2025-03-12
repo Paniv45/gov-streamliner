@@ -55,6 +55,4 @@ Once the application is running, you can access it at `http://localhost:3000`. F
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Authors
-
-- [ucx15 @ GitHib](https://github.com/ucx15).
 - [Paniv45 @ GitHub](https://github.com/Paniv45).
